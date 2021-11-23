@@ -32,18 +32,23 @@ namespace Matastav.Model
                 .ToTable($"{tableNamePrefix}D_kraj");
             modelBuilder.Entity<Region>()
                 .ToTable($"{tableNamePrefix}D_region");
-            modelBuilder.Entity<PolozkaDruh>()
-                .ToTable($"{tableNamePrefix}D_polozka_druh");
+            modelBuilder.Entity<VydajDruh>()
+                .ToTable($"{tableNamePrefix}D_vydaj_druh");
 
 
             modelBuilder.Entity<Kontrakt>()
                 .ToTable($"{tableNamePrefix}F_kontrakt");
             modelBuilder.Entity<Mzda>()
                 .ToTable($"{tableNamePrefix}F_mzda");
-            modelBuilder.Entity<Polozka>()
-                .ToTable($"{tableNamePrefix}F_polozka");
+            modelBuilder.Entity<Vydaj>()
+                .ToTable($"{tableNamePrefix}F_vydaj");
+            modelBuilder.Entity<Prijem>()
+                .ToTable($"{tableNamePrefix}F_prijem");
 
             modelBuilder.Entity<Region>()
+                .HasIndex(x => x.Nazev)
+                .IsUnique();
+            modelBuilder.Entity<VydajDruh>()
                 .HasIndex(x => x.Nazev)
                 .IsUnique();
 

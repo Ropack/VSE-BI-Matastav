@@ -4,14 +4,16 @@ using Matastav.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Matastav.Model.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20211123144828_PrijmyVydaje")]
+    partial class PrijmyVydaje
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -203,14 +205,11 @@ namespace Matastav.Model.Migrations
 
                     b.Property<string>("Nazev")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Nazev")
-                        .IsUnique();
-
-                    b.ToTable("rour01_D_vydaj_druh");
+                    b.ToTable("rour01_D_polozka_druh");
                 });
 
             modelBuilder.Entity("Matastav.Model.Zakaznik", b =>

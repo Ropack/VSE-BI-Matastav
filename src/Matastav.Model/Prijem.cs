@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Matastav.Model
 {
-    public class Polozka
+    public class Prijem
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
@@ -12,10 +12,9 @@ namespace Matastav.Model
         public decimal CastkaSkutecnost { get; set; }
         public decimal CastkaRozdil { get; set; }
         public DateTime Datum { get; set; }
-        public Pobocka Pobocka { get; set; }
 
-        [ForeignKey(nameof(PolozkaDruhId))]
-        public PolozkaDruh PolozkaDruh { get; set; }
-        public int PolozkaDruhId { get; set; }
+        [ForeignKey(nameof(ZdrojId))]
+        public Zdroj Zdroj { get; set; }
+        public int ZdrojId { get; set; }
     }
 }

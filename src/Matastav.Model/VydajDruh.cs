@@ -2,7 +2,7 @@
 
 namespace Matastav.Model
 {
-    public class PolozkaDruh
+    public class VydajDruh
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
