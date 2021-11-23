@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Matastav.Model.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211123100245_Init")]
+    [Migration("20211123160940_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,7 +116,57 @@ namespace Matastav.Model.Migrations
                     b.ToTable("rour01_D_pobocka");
                 });
 
-            modelBuilder.Entity("Matastav.Model.Polozka", b =>
+            modelBuilder.Entity("Matastav.Model.Prijem", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("CastkaPlan")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CastkaRozdil")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CastkaSkutecnost")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("Datum")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ZdrojId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ZdrojId");
+
+                    b.ToTable("rour01_F_prijem");
+                });
+
+            modelBuilder.Entity("Matastav.Model.Region", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("KrajId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Nazev")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("KrajId");
+
+                    b.HasIndex("Nazev")
+                        .IsUnique();
+
+                    b.ToTable("rour01_D_region");
+                });
+
+            modelBuilder.Entity("Matastav.Model.Vydaj", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("int");
@@ -145,41 +195,24 @@ namespace Matastav.Model.Migrations
 
                     b.HasIndex("PolozkaDruhId");
 
-                    b.ToTable("rour01_F_polozka");
+                    b.ToTable("rour01_F_vydaj");
                 });
 
-            modelBuilder.Entity("Matastav.Model.PolozkaDruh", b =>
+            modelBuilder.Entity("Matastav.Model.VydajDruh", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Nazev")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("rour01_D_polozka_druh");
-                });
+                    b.HasIndex("Nazev")
+                        .IsUnique();
 
-            modelBuilder.Entity("Matastav.Model.Region", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("KrajId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Nazev")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("KrajId");
-
-                    b.ToTable("rour01_D_region");
+                    b.ToTable("rour01_D_vydaj_druh");
                 });
 
             modelBuilder.Entity("Matastav.Model.Zakaznik", b =>
@@ -327,21 +360,15 @@ namespace Matastav.Model.Migrations
                     b.Navigation("Zamestnanec");
                 });
 
-            modelBuilder.Entity("Matastav.Model.Polozka", b =>
+            modelBuilder.Entity("Matastav.Model.Prijem", b =>
                 {
-                    b.HasOne("Matastav.Model.Pobocka", "Pobocka")
+                    b.HasOne("Matastav.Model.Zdroj", "Zdroj")
                         .WithMany()
-                        .HasForeignKey("PobockaId");
-
-                    b.HasOne("Matastav.Model.PolozkaDruh", "PolozkaDruh")
-                        .WithMany()
-                        .HasForeignKey("PolozkaDruhId")
+                        .HasForeignKey("ZdrojId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Pobocka");
-
-                    b.Navigation("PolozkaDruh");
+                    b.Navigation("Zdroj");
                 });
 
             modelBuilder.Entity("Matastav.Model.Region", b =>
@@ -353,6 +380,23 @@ namespace Matastav.Model.Migrations
                         .IsRequired();
 
                     b.Navigation("Kraj");
+                });
+
+            modelBuilder.Entity("Matastav.Model.Vydaj", b =>
+                {
+                    b.HasOne("Matastav.Model.Pobocka", "Pobocka")
+                        .WithMany()
+                        .HasForeignKey("PobockaId");
+
+                    b.HasOne("Matastav.Model.VydajDruh", "PolozkaDruh")
+                        .WithMany()
+                        .HasForeignKey("PolozkaDruhId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pobocka");
+
+                    b.Navigation("PolozkaDruh");
                 });
 
             modelBuilder.Entity("Matastav.Model.Zakaznik", b =>

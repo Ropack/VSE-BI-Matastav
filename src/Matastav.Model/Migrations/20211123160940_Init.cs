@@ -32,15 +32,15 @@ namespace Matastav.Model.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "rour01_D_polozka_druh",
+                name: "rour01_D_vydaj_druh",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    Nazev = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nazev = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_rour01_D_polozka_druh", x => x.Id);
+                    table.PrimaryKey("PK_rour01_D_vydaj_druh", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -84,7 +84,7 @@ namespace Matastav.Model.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Nazev = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nazev = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     KrajId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -99,7 +99,7 @@ namespace Matastav.Model.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "rour01_F_polozka",
+                name: "rour01_F_vydaj",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
@@ -112,17 +112,17 @@ namespace Matastav.Model.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_rour01_F_polozka", x => x.Id);
+                    table.PrimaryKey("PK_rour01_F_vydaj", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_rour01_F_polozka_rour01_D_pobocka_PobockaId",
+                        name: "FK_rour01_F_vydaj_rour01_D_pobocka_PobockaId",
                         column: x => x.PobockaId,
                         principalTable: "rour01_D_pobocka",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_rour01_F_polozka_rour01_D_polozka_druh_PolozkaDruhId",
+                        name: "FK_rour01_F_vydaj_rour01_D_vydaj_druh_PolozkaDruhId",
                         column: x => x.PolozkaDruhId,
-                        principalTable: "rour01_D_polozka_druh",
+                        principalTable: "rour01_D_vydaj_druh",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -248,10 +248,44 @@ namespace Matastav.Model.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "rour01_F_prijem",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    CastkaPlan = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CastkaSkutecnost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CastkaRozdil = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Datum = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ZdrojId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_rour01_F_prijem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_rour01_F_prijem_rour01_D_zdroj_ZdrojId",
+                        column: x => x.ZdrojId,
+                        principalTable: "rour01_D_zdroj",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_rour01_D_region_KrajId",
                 table: "rour01_D_region",
                 column: "KrajId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_rour01_D_region_Nazev",
+                table: "rour01_D_region",
+                column: "Nazev",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_rour01_D_vydaj_druh_Nazev",
+                table: "rour01_D_vydaj_druh",
+                column: "Nazev",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_rour01_D_zakaznik_ZakaznikKategorieId",
@@ -294,13 +328,18 @@ namespace Matastav.Model.Migrations
                 column: "ZamestnanecId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_rour01_F_polozka_PobockaId",
-                table: "rour01_F_polozka",
+                name: "IX_rour01_F_prijem_ZdrojId",
+                table: "rour01_F_prijem",
+                column: "ZdrojId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_rour01_F_vydaj_PobockaId",
+                table: "rour01_F_vydaj",
                 column: "PobockaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_rour01_F_polozka_PolozkaDruhId",
-                table: "rour01_F_polozka",
+                name: "IX_rour01_F_vydaj_PolozkaDruhId",
+                table: "rour01_F_vydaj",
                 column: "PolozkaDruhId");
         }
 
@@ -313,7 +352,10 @@ namespace Matastav.Model.Migrations
                 name: "rour01_F_mzda");
 
             migrationBuilder.DropTable(
-                name: "rour01_F_polozka");
+                name: "rour01_F_prijem");
+
+            migrationBuilder.DropTable(
+                name: "rour01_F_vydaj");
 
             migrationBuilder.DropTable(
                 name: "rour01_D_region");
@@ -322,16 +364,16 @@ namespace Matastav.Model.Migrations
                 name: "rour01_D_zakaznik");
 
             migrationBuilder.DropTable(
-                name: "rour01_D_zdroj");
+                name: "rour01_D_zamestnanec");
 
             migrationBuilder.DropTable(
-                name: "rour01_D_zamestnanec");
+                name: "rour01_D_zdroj");
 
             migrationBuilder.DropTable(
                 name: "rour01_D_pobocka");
 
             migrationBuilder.DropTable(
-                name: "rour01_D_polozka_druh");
+                name: "rour01_D_vydaj_druh");
 
             migrationBuilder.DropTable(
                 name: "rour01_D_kraj");
@@ -340,10 +382,10 @@ namespace Matastav.Model.Migrations
                 name: "rour01_D_zakaznik_kategorie");
 
             migrationBuilder.DropTable(
-                name: "rour01_D_zdroj_kategorie");
+                name: "rour01_D_zamestnanec_pozice");
 
             migrationBuilder.DropTable(
-                name: "rour01_D_zamestnanec_pozice");
+                name: "rour01_D_zdroj_kategorie");
         }
     }
 }
