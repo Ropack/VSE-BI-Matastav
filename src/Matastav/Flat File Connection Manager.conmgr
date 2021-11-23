@@ -1,0 +1,83 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Flat File Connection Manager"
+  DTS:DTSID="{B1463ED7-E5D9-443E-B501-C0F5F7A19A13}"
+  DTS:CreationName="MULTIFLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1029"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1250"
+      DTS:ConnectionString="C:\dev\Matastav\Assignment\t_kontrakty_snimek_1.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_2.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_3.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_4.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_5.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_6.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_7.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_8.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_9.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_10.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_11.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_12.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_13.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_14.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_15.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_16.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_17.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_18.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_19.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_20.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_21.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_22.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_23.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_24.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_25.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_26.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_27.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_28.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_29.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_30.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_31.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_32.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_33.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_34.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_35.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_36.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_37.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_38.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_39.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_40.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_41.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_42.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_43.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_44.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_45.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_46.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_47.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_48.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_49.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_50.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_51.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_52.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_53.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_54.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_55.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_56.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_57.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_58.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_59.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_60.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_61.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_62.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_63.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_64.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_65.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_66.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_67.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_68.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_69.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_70.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_71.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_72.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_73.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_74.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_75.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_76.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_77.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_78.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_79.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_80.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_81.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_82.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_83.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_84.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_85.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_86.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_87.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_88.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_89.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_90.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_91.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_92.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_93.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_94.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_95.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_96.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_97.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_98.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_99.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_100.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_101.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_102.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_103.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_104.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_105.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_106.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_107.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_108.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_109.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_110.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_111.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_112.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_113.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_114.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_115.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_116.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_117.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_118.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_119.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_120.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_121.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_122.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_123.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_124.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_125.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_126.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_127.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_128.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_129.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_130.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_131.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_132.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_133.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_134.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_135.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_136.txt|C:\dev\Matastav\Assignment\t_kontrakty_snimek_137.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;idkontr&quot;"
+          DTS:DTSID="{B5E2041D-4E95-4415-95BF-893387E223B9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;idzak&quot;"
+          DTS:DTSID="{CA093EE9-0584-4F9D-8FEE-51AECFDD4D40}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;idzdroje&quot;"
+          DTS:DTSID="{CA6DE7D1-0131-4A7F-AA5C-F04F42073894}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;datumod&quot;"
+          DTS:DTSID="{BABCEC6D-FE85-44E9-8782-C2602959BB05}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;datumdo&quot;"
+          DTS:DTSID="{CA40D960-7796-4575-933A-DAA9AA521588}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x007C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;cena_celkem&quot;"
+          DTS:DTSID="{808F9609-BDC3-4C1A-9043-3C29FDF17BFA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;naklady_celkem&quot;"
+          DTS:DTSID="{81BC79A9-674F-476D-BFE6-254B93C10638}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
