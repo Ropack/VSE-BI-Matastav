@@ -1,0 +1,6 @@
+Id|Nazev|Druh
+1|Mzdy|výdaj mzda
+2|Nájem|výdaj nájem pobočky
+3|Osobní|výdaj osobní výdaje
+4|Režije|výdaj režie pobočky
+5|Zdroje|výdaj kontrakt
